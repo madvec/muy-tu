@@ -3,7 +3,7 @@ import icecreamImage from '../assets/icecream.avif'
 import walkImage from '../assets/walk.avif'
 
 export const celebration = {
-    recipient: 'Sofía',
+    recipient: 'Caro',
     signature: 'Alguien que tenía ganas de hacerte sonreír.',
 
     wishes: {
