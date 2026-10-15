@@ -1,0 +1,520 @@
+.app {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.quiz-panel {
+    width: 100%;
+    max-width: 510px;
+    padding: clamp(24px, 6vw, 42px);
+    background: #fcfaf6;
+    border: 1px solid #e7e0e7;
+    border-radius: 28px;
+}
+
+.quiz-brand {
+    margin: 0 0 48px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.quiz-eyebrow {
+    margin: 0 0 16px;
+    color: #716778;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.quiz-panel h1 {
+    margin: 0 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 6vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+}
+
+.quiz-description {
+    margin: 0 0 32px;
+    color: #716778;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.quiz-button {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: #302b3d;
+    color: #fcfaf6;
+    border: 0;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 180ms ease;
+}
+
+.quiz-button:hover {
+    background: #655183;
+}
+
+.quiz-button:focus-visible {
+    outline: 3px solid #655183;
+    outline-offset: 4px;
+}
+
+.quiz-note {
+    margin: 18px 0 0;
+    color: #716778;
+    font-size: 12px;
+    text-align: center;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+}
+
+.quiz-options legend {
+    margin-bottom: 24px;
+    padding: 0;
+    color: #716778;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 64px;
+    padding: 16px;
+    border: 1px solid #e7e0e7;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.quiz-option.is-selected {
+    background: #eae4f5;
+    border-color: #655183;
+}
+
+.quiz-option input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #655183;
+}
+
+.quiz-option:focus-within {
+    outline: 3px solid #655183;
+    outline-offset: 3px;
+}
+
+.quiz-back {
+    min-height: 44px;
+    padding: 8px 0;
+    background: transparent;
+    color: #716778;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.quiz-back:focus-visible {
+    outline: 3px solid #655183;
+    outline-offset: 4px;
+}
+
+.quiz-actions {
+    display: grid;
+    gap: 8px;
+}
+
+.quiz-actions .quiz-back {
+    justify-self: center;
+}
+
+.quiz-button:disabled {
+    background: #d7d1de;
+    color: #716778;
+    cursor: not-allowed;
+}
+
+.app {
+    transition: background 500ms ease;
+}
+
+.app--celebration {
+    background: #f8e1d7;
+}
+
+.quiz-panel--celebration {
+    background: #fff0e4;
+    color: #692c43;
+    border-color: #eccfc6;
+}
+
+.quiz-panel--celebration .quiz-eyebrow,
+.quiz-panel--celebration .quiz-description,
+.quiz-panel--celebration .quiz-back {
+    color: #845b63;
+}
+
+.quiz-panel--celebration .quiz-button {
+    background: #692c43;
+    color: #fff0e4;
+}
+
+.quiz-panel--celebration .quiz-button:hover {
+    background: #844159;
+}
+
+.celebration-content {
+    position: relative;
+    text-align: center;
+    animation: celebration-enter 500ms ease both;
+}
+
+.celebration-mark {
+    margin: 20px 0;
+    font-size: 48px;
+}
+
+.quiz-panel .celebration-title {
+    margin-bottom: 28px;
+    font-size: clamp(48px, 10vw, 72px);
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+.celebration-title span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: -0.02em;
+}
+
+.celebration-signature {
+    margin: 20px 0 0;
+    color: #845b63;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.celebration-restart {
+    display: block;
+    margin: 16px auto 0;
+}
+
+.invitation-ticket {
+    margin-bottom: 24px;
+    padding: 24px;
+    background: #fcfaf6;
+    border: 1px solid #eccfc6;
+    border-radius: 18px;
+    text-align: left;
+}
+
+.invitation-details {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px dashed #d8b9b0;
+}
+
+.invitation-details dt {
+    margin-bottom: 4px;
+    color: #845b63;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.invitation-details dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.invitation-confirmation {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.celebration-confetti {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.celebration-confetti span {
+    position: absolute;
+    top: -16px;
+    left: calc(var(--i) * 5.5%);
+    width: 6px;
+    height: 12px;
+    background: #b69ccf;
+    border-radius: 2px;
+    opacity: 0;
+    animation: celebration-confetti 1400ms ease-out both;
+    animation-delay: calc(var(--i) * 20ms);
+}
+
+.celebration-confetti span:nth-child(3n) {
+    background: #d8917c;
+}
+
+.celebration-confetti span:nth-child(3n + 1) {
+    background: #692c43;
+}
+
+@keyframes celebration-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes celebration-confetti {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(280px) rotate(300deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app,
+    .celebration-content {
+        transition: none;
+        animation: none;
+    }
+
+    .celebration-confetti {
+        display: none;
+    }
+}
+
+.quiz-processing {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quiz-processing-bar {
+    width: min(240px, 100%);
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e7e0e7;
+}
+
+.quiz-processing-bar span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #655183;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: processing-fill 2s linear forwards;
+}
+
+@keyframes processing-fill {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quiz-processing-bar span {
+        animation: none;
+        transform: scaleX(1);
+    }
+}
+
+.quiz-anticipation {
+    margin: 0 0 24px;
+    color: #655183;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.app--celebration {
+    background: radial-gradient(
+            ellipse at 50% 20%,
+            #fff4df 0%,
+            transparent 65%
+    ),
+    #f8e1d7;
+}
+
+.quiz-panel--celebration {
+    box-shadow: 0 24px 70px rgb(105 44 67 / 12%),
+    0 0 60px rgb(240 183 141 / 40%),
+    0 0 120px rgb(231 151 172 / 25%),
+    inset 0 0 0 6px rgb(255 255 255 / 35%);
+}
+
+.celebration-content--birthday .celebration-mark {
+    display: grid;
+    place-items: center;
+    width: 104px;
+    height: 104px;
+    margin: 24px auto 32px;
+    border: 1px solid #d9ac79;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff9e9 0%, #f9dfbd 100%);
+    color: #9b632b;
+    font-size: 58px;
+    box-shadow: 0 0 0 10px rgb(217 172 121 / 15%),
+    0 0 30px rgb(244 195 117 / 65%),
+    0 0 70px rgb(244 195 117 / 40%),
+    0 0 110px rgb(244 195 117 / 20%);
+}
+
+.celebration-content--birthday .celebration-title {
+    color: #692c43;
+    text-shadow: 0 3px 0 rgb(255 255 255 / 60%);
+}
+
+.celebration-content--birthday > :not(.celebration-confetti) {
+    animation: birthday-arrive 700ms ease both;
+}
+
+.celebration-content--birthday .celebration-mark {
+    animation-delay: 100ms;
+}
+
+.celebration-content--birthday .celebration-title {
+    animation-delay: 220ms;
+}
+
+.celebration-content--birthday .quiz-description {
+    animation-delay: 380ms;
+}
+
+.celebration-content--birthday .quiz-button,
+.celebration-content--birthday .celebration-signature,
+.celebration-content--birthday .celebration-restart {
+    animation-delay: 550ms;
+}
+
+@keyframes birthday-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .celebration-content--birthday > :not(.celebration-confetti) {
+        animation: none;
+    }
+}
+
+.celebration-content--birthday .celebration-flower {
+    position: relative;
+    isolation: isolate;
+    width: clamp(180px, 45vw, 230px);
+    margin: 8px auto 24px;
+    animation-delay: 100ms;
+}
+
+.celebration-flower::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    left: 50%;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(
+            circle,
+            rgb(255 213 174 / 80%),
+            rgb(235 164 185 / 40%) 45%,
+            transparent 72%
+    );
+    filter: blur(18px);
+    transform: translate(-50%, -50%);
+}
+
+.celebration-flower svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    filter: drop-shadow(0 8px 12px rgb(105 44 67 / 12%));
+    transform-origin: 50% 95%;
+    animation: peony-sway 3s ease-in-out 2;
+}
+
+@keyframes peony-sway {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .celebration-flower svg {
+        animation: none;
+    }
+}
+
+.invitation-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
