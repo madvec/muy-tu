@@ -3,7 +3,7 @@ import {
     celebration,
     invitationMemories,
 } from '../data/celebration'
-import Peony from './Peony'
+import Bouquet from "./Bouquet.jsx";
 
 export default function CelebrationScreen({answers, onRestart}) {
     const [showInvitation, setShowInvitation] = useState(false)
@@ -72,7 +72,7 @@ export default function CelebrationScreen({answers, onRestart}) {
                     <div aria-live="polite">
                         {isAccepted ? (
                             <p className="invitation-confirmation">
-                                Entonces solo falta elegir el día.
+                                Entonces solo falta elegir el día. <br/>
                             </p>
                         ) : (
                             <button
@@ -107,7 +107,7 @@ export default function CelebrationScreen({answers, onRestart}) {
                     </p>
 
                     <div className="celebration-flower">
-                        <Peony/>
+                        <Bouquet />
                     </div>
 
                     <h1 id="quiz-title" className="celebration-title">

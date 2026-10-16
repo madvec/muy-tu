@@ -460,8 +460,8 @@
 .celebration-content--birthday .celebration-flower {
     position: relative;
     isolation: isolate;
-    width: clamp(180px, 45vw, 230px);
-    margin: 8px auto 24px;
+    width: min(290px, 100%);
+    margin: 4px auto 20px;
     animation-delay: 100ms;
 }
 
@@ -471,8 +471,8 @@
     z-index: -1;
     top: 40%;
     left: 50%;
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 180px;
     border-radius: 50%;
     background: radial-gradient(
             circle,
