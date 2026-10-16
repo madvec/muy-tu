@@ -1,19 +1,24 @@
 import {useState} from 'react'
-import {
-    celebration,
-    invitationMemories,
-} from '../data/celebration'
-import Bouquet from "./Bouquet.jsx";
+import {celebration} from '../data/celebration'
+import {getQuizResult} from '../data/results'
+import Bouquet from './Bouquet'
 
 export default function CelebrationScreen({answers, onRestart}) {
     const [showInvitation, setShowInvitation] = useState(false)
     const [isAccepted, setIsAccepted] = useState(false)
 
-    const wish = celebration.wishes[answers.mood]
-    const note = celebration.notes[answers.connection]
-    const time = celebration.times[answers.time]
+    const result = getQuizResult(answers)
+
+    const wish = result?.birthdayWish
+    const note = result?.birthdayNote
+    const memoryDetail = result?.invitationDetail
+
+    const time = 'Cuando se acomode.'
     const plan = celebration.plans[answers.plan]
-    const memoryDetail = invitationMemories[answers.memory]
+
+    const phone = import.meta.env.VITE_WHATSAPP_PHONE
+    const message = '¡Me gusta el plan! ¿Nos ponemos de acuerdo?'
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 
     return (
         <div
@@ -64,16 +69,28 @@ export default function CelebrationScreen({answers, onRestart}) {
 
                             <div>
                                 <dt>Fecha</dt>
-                                <dd>El día lo elegimos juntos.</dd>
+                                <dd>El día se propone por aparte</dd>
                             </div>
                         </dl>
                     </div>
 
                     <div aria-live="polite">
                         {isAccepted ? (
-                            <p className="invitation-confirmation">
-                                Entonces solo falta elegir el día. <br/>
-                            </p>
+                            <>
+                                <p className="invitation-confirmation">
+                                    Entonces solo falta elegir el día.
+                                </p>
+
+                                <a
+                                    className="quiz-button invitation-contact"
+                                    href={whatsappUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Nos ponemos de acuerdo por WhatsApp
+                                    <span aria-hidden="true">↗</span>
+                                </a>
+                            </>
                         ) : (
                             <button
                                 type="button"
@@ -107,12 +124,12 @@ export default function CelebrationScreen({answers, onRestart}) {
                     </p>
 
                     <div className="celebration-flower">
-                        <Bouquet />
+                        <Bouquet/>
                     </div>
 
                     <h1 id="quiz-title" className="celebration-title">
                         <span>Feliz cumpleaños,</span>
-                        {celebration.recipient}.
+                        {celebration.recipient}
                     </h1>
 
                     <p className="quiz-description">{wish}</p>

@@ -1,121 +1,91 @@
 export const questions = [
     {
-        id: 'mood',
-        title: 'Te regalan unas horas sin pendientes. ¿Qué haces con ellas?',
+        id: 'discovery',
+        title: 'Tienes un día libre en una ciudad que no conoces. ¿Por dónde empiezas?',
         options: [
             {
-                id: 'calm',
-                label: 'Bajo el ritmo. Ya hacía falta.',
-                result:
-                    'Sabes disfrutar esos momentos en los que no hace falta correr ni tenerlo todo planeado.',
+                id: 'beauty',
+                label: 'Por un lugar bonito. Hay rincones que merecen disfrutarse con calma.',
             },
             {
-                id: 'fun',
-                label: 'Busco buena compañía; algo se nos ocurrirá.',
-                result:
-                    'Para ti, la compañía puede convertir un día cualquiera en uno que vale la pena recordar.',
+                id: 'explore',
+                label: 'Por salir a explorar. Seguro encuentro algo que no sabía que me iba a gustar.',
             },
             {
-                id: 'adventure',
-                label: 'Pruebo algo distinto. Lo de siempre puede esperar.',
-                result:
-                    'Tienes esa curiosidad que convierte un rato libre en una oportunidad para descubrir algo.',
+                id: 'people',
+                label: 'Por preguntar recomendaciones. Una buena conversación también puede llevarte a un buen lugar.',
             },
         ],
     },
     {
-        id: 'connection',
-        title: 'Alguien te cae bien. ¿Qué termina de ganarte?',
+        id: 'project',
+        title: 'Se te ocurre una idea que de verdad te emociona. ¿Qué pasa después?',
         options: [
             {
-                id: 'humor',
-                label: 'Que me haga reír, incluso con un chiste malísimo.',
-                result:
-                    'Y si alguien consigue hacerte reír, ya tiene buena parte del camino recorrido.',
+                id: 'dream',
+                label: 'Ya me imaginé cómo se vería hecha realidad. Con detalles y todo.',
             },
             {
-                id: 'attention',
-                label: 'Que recuerde algo que dije sin darle importancia.',
-                result:
-                    'Te llegan esos detalles que demuestran que alguien estaba escuchando de verdad.',
+                id: 'learn',
+                label: 'Empiezo a investigar cómo hacerla. Algo nuevo me va a tocar aprender.',
             },
             {
-                id: 'chemistry',
-                label: 'Que podamos hablar de cualquier cosa y olvidarnos del reloj.',
-                result:
-                    'Conectas con las personas con las que puedes ser tú y dejar que la conversación encuentre su rumbo.',
+                id: 'share',
+                label: 'Se la cuento a alguien de confianza. Necesito compartir la emoción.',
             },
         ],
     },
     {
-        id: 'memory',
-        title: 'Cuando un momento te encanta, ¿cómo lo guardas?',
+        id: 'care',
+        title: 'Una persona que quieres ha tenido una semana pesada. ¿Qué te nace hacer?',
         options: [
             {
-                id: 'photo',
-                label: 'Una foto. Me gusta poder volver a ese instante.',
-                result:
-                    'Te gusta conservar pequeños pedacitos de lo vivido y volver a ellos de vez en cuando.',
+                id: 'detail',
+                label: 'Buscar un detalle que diga: «me acordé de ti».',
             },
             {
-                id: 'music',
-                label: 'Una canción. Después la escucho y vuelvo ahí.',
-                result:
-                    'Tus recuerdos también tienen banda sonora: una canción puede llevarte de vuelta a un buen momento.',
+                id: 'presence',
+                label: 'Hacerle un espacio para hablar, salir o simplemente acompañarla.',
             },
             {
-                id: 'story',
-                label: 'Una anécdota que voy a contar mil veces.',
-                result:
-                    'Disfrutas revivir los buenos momentos contándolos, sobre todo si alguien se ríe contigo.',
+                id: 'help',
+                label: 'Ayudarle con algo concreto. Que al menos una cosa le pese menos.',
             },
         ],
     },
     {
-        id: 'time',
-        title: '¿Qué momento del día te gustaría poder alargar?',
+        id: 'style',
+        title: 'Vas a salir y tienes tiempo para arreglarte a gusto. ¿Qué disfrutas más?',
         options: [
             {
-                id: 'morning',
-                label: 'La mañana, cuando todavía todo parece posible.',
-                result:
-                    'Las mañanas tienen para ti ese encanto de las cosas que apenas empiezan.',
+                id: 'outfit',
+                label: 'Encontrar esa combinación con la que me miro y digo: «sí, así».',
             },
             {
-                id: 'afternoon',
-                label: 'La tarde, cuando por fin puedo bajar el ritmo.',
-                result:
-                    'Te quedarías un poco más en esas tardes que se disfrutan sin prisa.',
+                id: 'details',
+                label: 'Elegir los pequeños detalles. A veces un accesorio cambia todo.',
             },
             {
-                id: 'evening',
-                label: 'La noche, cuando las conversaciones se ponen buenas.',
-                result:
-                    'Hay algo en la noche que te invita a quedarte un ratito más.',
+                id: 'ritual',
+                label: 'Poner música y disfrutar el ritual desde antes de salir.',
             },
         ],
     },
     {
         id: 'plan',
-        title: 'Una buena conversación necesita…',
+        title: 'Si alguien quisiera invitarte a desconectarte un rato, ¿qué plan te gustaría?',
         options: [
             {
                 id: 'coffee',
-                label: 'Un café que probablemente termine enfriándose.',
-                result:
-                    'Un café sería una buena excusa para empezar; lo interesante vendría después.',
+                label: 'Un café en un lugar bonito y una conversación que se alargue.',
             },
             {
                 id: 'icecream',
-                label: 'Un helado y cero preocupación por decir tonterías.',
-                result:
-                    'Lo tuyo podría ser un helado y la libertad de reírse de cualquier tontería.',
+                label: 'Un helado, buena compañía y reírme de cualquier ocurrencia.',
             },
             {
                 id: 'walk',
-                label: 'Caminar sin tener demasiado claro adónde.',
-                result:
-                    'A veces, tu mejor plan es caminar y dejar que la conversación decida el camino.',
+                label: 'Un paseo sin tanta prisa, con algo por descubrir en el camino.',
             },
         ],
     },

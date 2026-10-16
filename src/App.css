@@ -31,7 +31,7 @@
 
 .quiz-panel h1 {
     margin: 0 0 20px;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(36px, 6vw, 48px);
     font-weight: 400;
     line-height: 1.1;
@@ -201,6 +201,7 @@
     margin-bottom: 28px;
     font-size: clamp(48px, 10vw, 72px);
     font-style: italic;
+    font-weight: 500;
     overflow-wrap: anywhere;
 }
 
@@ -372,8 +373,8 @@
 .quiz-anticipation {
     margin: 0 0 24px;
     color: #655183;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
     font-style: italic;
     line-height: 1.5;
     text-align: center;
@@ -517,4 +518,9 @@
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 24px;
+}
+
+.invitation-contact {
+    text-decoration: none;
+    text-align: left;
 }

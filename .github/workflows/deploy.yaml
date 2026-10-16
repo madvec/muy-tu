@@ -37,6 +37,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_WHATSAPP_PHONE: ${{ secrets.VITE_WHATSAPP_PHONE }}
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

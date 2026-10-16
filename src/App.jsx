@@ -175,7 +175,7 @@ function App() {
                         ))}
 
                         <p className="quiz-anticipation">
-                            Aunque, en realidad… había algo más preparado para ti.
+                            Hay detalles tuyos que no caben en cinco preguntas.
                         </p>
 
                         <button
@@ -183,8 +183,8 @@ function App() {
                             className="quiz-button"
                             onClick={() => setScreen('celebration')}
                         >
-                            ¿Lista para una sorpresa?
-                            <span aria-hidden="true">↗</span>
+                            Un detalle más
+                            <span aria-hidden="true">→</span>
                         </button>
                     </>
                 )}
