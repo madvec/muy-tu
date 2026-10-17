@@ -4,19 +4,38 @@ import CelebrationScreen from './components/CelebrationScreen'
 import {getQuizResult} from './data/results'
 import './App.css'
 
+const processingMessages = [
+    'Analizando tus respuestas…',
+    'Identificando patrones de personalidad…',
+    'Preparando un resultado sospechosamente específico…',
+]
+
 function App() {
     const [screen, setScreen] = useState('welcome')
     const [questionIndex, setQuestionIndex] = useState(0)
+    const [processingStep, setProcessingStep] = useState(0)
     const [answers, setAnswers] = useState({})
 
     useEffect(() => {
         if (screen !== 'processing') return
 
-        const timer = setTimeout(() => {
-            setScreen('result')
-        }, 2500)
+        const secondMessageTimer = setTimeout(() => {
+            setProcessingStep(1)
+        }, 2000)
 
-        return () => clearTimeout(timer)
+        const thirdMessageTimer = setTimeout(() => {
+            setProcessingStep(2)
+        }, 4000)
+
+        const resultTimer = setTimeout(() => {
+            setScreen('result')
+        }, 6000)
+
+        return () => {
+            clearTimeout(secondMessageTimer)
+            clearTimeout(thirdMessageTimer)
+            clearTimeout(resultTimer)
+        }
     }, [screen])
 
     const currentQuestion = questions[questionIndex]
@@ -40,6 +59,7 @@ function App() {
         if (!selectedAnswer) return
 
         if (isLastQuestion) {
+            setProcessingStep(0)
             setScreen('processing')
         } else {
             setQuestionIndex((previousIndex) => previousIndex + 1)
@@ -79,12 +99,13 @@ function App() {
                         </p>
 
                         <h1 id="quiz-title">
-                            ¿Qué dice tu plan ideal de ti?
+                            ¿Qué te hace tan tú?
                         </h1>
 
                         <p className="quiz-description">
-                            Hay pequeños detalles que dicen mucho de ti.
-                            Descubre los tuyos en {questions.length} preguntas.
+                            Tu forma de soñar, de querer y de disfrutar
+                            está llena de pistas. Descubre qué dicen de ti
+                            en {questions.length} preguntas.
                         </p>
 
                         <button
@@ -190,16 +211,27 @@ function App() {
                 )}
 
                 {screen === 'processing' && (
-                    <div className="quiz-processing" role="status">
-                        <p className="quiz-eyebrow">Cada detalle cuenta</p>
-
-                        <h1 id="quiz-title">Uniendo tus respuestas…</h1>
-
-                        <p className="quiz-description">
-                            Tu resultado está tomando forma.
+                    <div
+                        className="quiz-processing"
+                        role="status"
+                        aria-atomic="true"
+                    >
+                        <p className="quiz-eyebrow">
+                            Cada detalle cuenta
                         </p>
 
-                        <div className="quiz-processing-bar" aria-hidden="true">
+                        <h1 id="quiz-title">
+                            {processingMessages[processingStep]}
+                        </h1>
+
+                        <p className="quiz-description">
+                            Hay detalles que empiezan a encajar.
+                        </p>
+
+                        <div
+                            className="quiz-processing-bar"
+                            aria-hidden="true"
+                        >
                             <span/>
                         </div>
                     </div>

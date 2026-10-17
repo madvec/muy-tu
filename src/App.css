@@ -524,3 +524,205 @@
     text-decoration: none;
     text-align: left;
 }
+
+.quiz-processing-bar span {
+    animation-duration: 6s;
+}
+
+/* Apertura del regalo */
+
+.gift-opening {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 340px;
+    overflow: hidden;
+    animation: gift-opening-exit 2600ms ease both;
+}
+
+/* Título disponible para lectores de pantalla */
+.gift-opening__title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.gift-opening__package {
+    position: relative;
+    width: min(240px, 80%);
+    aspect-ratio: 6 / 7;
+    perspective: 700px;
+}
+
+.gift-opening__glow {
+    position: absolute;
+    inset: -35%;
+    border-radius: 50%;
+    background: radial-gradient(
+            circle,
+            #fff6db 0%,
+            rgb(245 204 189 / 50%) 32%,
+            transparent 66%
+    );
+    animation: gift-light 2600ms ease both;
+}
+
+.gift-opening__paper {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #8ba3b2;
+    box-shadow: 0 12px 24px rgb(65 91 112 / 12%);
+}
+
+.gift-opening__paper::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(
+            #fff8e9,
+            #e8d6ba,
+            #fff8e9
+    );
+}
+
+.gift-opening__paper--left {
+    left: 0;
+    background: linear-gradient(115deg, #d7e5eb, #a3bdce);
+    border-radius: 8px 0 0 8px;
+    transform-origin: left center;
+    animation: gift-paper-left 1100ms 1150ms
+    cubic-bezier(.22, .7, .2, 1) both;
+}
+
+.gift-opening__paper--right {
+    right: 0;
+    background: linear-gradient(245deg, #dce9ef, #acc4d3);
+    border-radius: 0 8px 8px 0;
+    transform-origin: right center;
+    animation: gift-paper-right 1100ms 1150ms
+    cubic-bezier(.22, .7, .2, 1) both;
+}
+
+.gift-opening__ribbon {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            #e8d6ba,
+            #fff8e9,
+            #e8d6ba
+    );
+    transform-origin: center;
+    animation: gift-ribbon-away 650ms 750ms ease both;
+}
+
+.gift-opening__bow {
+    position: absolute;
+    z-index: 1;
+    top: calc(45% - 38px);
+    left: 50%;
+    width: 150px;
+    height: 100px;
+    overflow: visible;
+    transform: translateX(-50%);
+}
+
+.gift-opening__bow-left,
+.gift-opening__bow-right,
+.gift-opening__knot {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.gift-opening__bow-left {
+    animation: gift-bow-left 700ms 600ms ease both;
+}
+
+.gift-opening__bow-right {
+    animation: gift-bow-right 700ms 600ms ease both;
+}
+
+.gift-opening__knot {
+    animation: gift-ribbon-away 500ms 800ms ease both;
+}
+
+@keyframes gift-bow-left {
+    to {
+        opacity: 0;
+        transform: translate(-35px, -10px)
+        rotate(-22deg) scale(.8);
+    }
+}
+
+@keyframes gift-bow-right {
+    to {
+        opacity: 0;
+        transform: translate(35px, -10px)
+        rotate(22deg) scale(.8);
+    }
+}
+
+@keyframes gift-ribbon-away {
+    to {
+        opacity: 0;
+        transform: scaleX(.3);
+    }
+}
+
+@keyframes gift-paper-left {
+    to {
+        opacity: 0;
+        transform: translateX(-65%)
+        rotateY(-65deg) rotate(-9deg);
+    }
+}
+
+@keyframes gift-paper-right {
+    to {
+        opacity: 0;
+        transform: translateX(65%)
+        rotateY(65deg) rotate(9deg);
+    }
+}
+
+@keyframes gift-light {
+    0%, 25% {
+        opacity: 0;
+        transform: scale(.6);
+    }
+
+    65%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes gift-opening-exit {
+    0%, 88% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gift-opening,
+    .gift-opening * {
+        animation: none;
+    }
+}
